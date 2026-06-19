@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ridhvik — Full Stack Developer & AI Enthusiast. Play the snake game on the page!">
+    <title>Ridhvik — Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Snake canvas — lives on top of everything -->
+    <canvas id="snake-canvas"></canvas>
+
+    <!-- Floating snake HUD -->
+    <div class="snake-hud" id="snakeHud">
+        <span class="hud-snake-icon">🐍</span>
+        <span class="hud-score" id="hudScore">0</span>
+        <span class="hud-sep">|</span>
+        <span class="hud-hint" id="hudHint">Arrow keys to play</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo"><span class="lb">&lt;</span>RV<span class="lb">/&gt;</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="badge-dot"></span> Open to opportunities</div>
+            <h1 class="hero-title">
+                <span class="hero-hi">Hi, I'm</span>
+                <span class="hero-name">Ridhvik</span>
+                <span class="hero-role" id="typedText"></span>
+            </h1>
+            <p class="hero-desc">I build <span class="hl">AI-powered</span> products and delightful <span class="hl">web experiences</span>. Currently obsessed with LLMs, agentic workflows, and turning complex problems into elegant code.</p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary"><span>About Me</span></a>
+                <a href="#projects" class="btn btn-ghost"><span>View Projects</span></a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num" data-target="15">0</span><span class="stat-p">+</span><span class="stat-lbl">Projects</span></div>
+                <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-p">+</span><span class="stat-lbl">Technologies</span></div>
+                <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-p">+</span><span class="stat-lbl">Years Coding</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-card">
+                <div class="cc-bar"><span class="cd r"></span><span class="cd y"></span><span class="cd g"></span><span class="cc-title">about.ts</span></div>
+                <pre class="cc-code"><code><span class="kw">const</span> <span class="vr">dev</span> = {
+  <span class="ky">name</span>: <span class="st">"Ridhvik"</span>,
+  <span class="ky">stack</span>: [<span class="st">"Python"</span>, <span class="st">"React"</span>, <span class="st">"Next.js"</span>],
+  <span class="ky">focus</span>: <span class="st">"AI & Full Stack"</span>,
+  <span class="ky">coffee</span>: <span class="bl">Infinity</span>,
+  <span class="ky">motto</span>: <span class="st">"Ship fast, learn faster"</span>,
+};</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-hdr"><span class="stag">01</span><h2 class="stitle">About Me</h2><div class="sline"></div></div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead">I'm a <strong>full-stack developer</strong> passionate about building AI-powered products that solve real problems.</p>
+                    <p>My journey started with curiosity about how things work and evolved into a deep love for crafting software. I work across the entire stack — from pixel-perfect frontends to robust backend APIs and intelligent AI agents.</p>
+                    <p>When I'm not shipping code, I'm exploring new technologies, contributing to open source, or building side projects that push boundaries.</p>
+                    <div class="about-chips">
+                        <div class="chip">🧠 AI/ML Integration</div>
+                        <div class="chip">⚡ Performance Obsessed</div>
+                        <div class="chip">🎨 Design-Driven</div>
+                        <div class="chip">🚀 Ship Fast</div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <div class="skill-card" data-animate><h3>Frontend</h3><div class="tags"><span>React</span><span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>HTML/CSS</span></div></div>
+                    <div class="skill-card" data-animate><h3>Backend</h3><div class="tags"><span>Python</span><span>FastAPI</span><span>Node.js</span><span>PostgreSQL</span><span>Supabase</span></div></div>
+                    <div class="skill-card" data-animate><h3>AI / ML</h3><div class="tags"><span>LangChain</span><span>LangGraph</span><span>OpenAI</span><span>Gemini</span><span>RAG</span></div></div>
+                    <div class="skill-card" data-animate><h3>Tools</h3><div class="tags"><span>Git</span><span>Docker</span><span>Vercel</span><span>Linux</span><span>Flutter</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-hdr"><span class="stag">02</span><h2 class="stitle">Projects</h2><div class="sline"></div></div>
+            <div class="projects-grid">
+                <article class="proj-card featured" data-animate>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#667eea,#764ba2)"><span class="proj-emoji">🤖</span></div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span>Next.js</span><span>LangGraph</span><span>Python</span></div>
+                        <h3>Scout Pilot</h3>
+                        <p>AI-powered job application workflow — automates scouting, resume tailoring, and referral outreach using LangGraph agents.</p>
+                        <div class="proj-links"><a href="#">GitHub ↗</a><a href="#">Live ↗</a></div>
+                    </div>
+                </article>
+                <article class="proj-card" data-animate>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><span class="proj-emoji">🌾</span></div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span>Flutter</span><span>Dart</span><span>Supabase</span></div>
+                        <h3>Annam Natural Farms</h3>
+                        <p>Farm management app with order tracking, customer profiles, and data exports.</p>
+                        <div class="proj-links"><a href="#">GitHub ↗</a><a href="#">Live ↗</a></div>
+                    </div>
+                </article>
+                <article class="proj-card" data-animate>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><span class="proj-emoji">🎮</span></div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span>React</span><span>Gamification</span></div>
+                        <h3>LifeQuest</h3>
+                        <p>Gamified personal development — turns daily habits into an RPG progression system.</p>
+                        <div class="proj-links"><a href="#">GitHub ↗</a><a href="#">Live ↗</a></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-hdr"><span class="stag">03</span><h2 class="stitle">Contact</h2><div class="sline"></div></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's build something together.</h3>
+                    <p>I'm always open to new opportunities, collaborations, and conversations.</p>
+                    <div class="contact-cards">
+                        <a href="mailto:your.email@example.com" class="c-card"><span class="c-icon">📧</span><div><span class="c-label">Email</span><span class="c-val">your.email@example.com</span></div></a>
+                        <a href="https://github.com/yourusername" target="_blank" class="c-card"><span class="c-icon">💻</span><div><span class="c-label">GitHub</span><span class="c-val">@yourusername</span></div></a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="c-card"><span class="c-icon">🔗</span><div><span class="c-label">LinkedIn</span><span class="c-val">/in/yourprofile</span></div></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="fg"><label for="fname">Name</label><input type="text" id="fname" placeholder="John Doe" required></div>
+                    <div class="fg"><label for="femail">Email</label><input type="email" id="femail" placeholder="john@example.com" required></div>
+                    <div class="fg"><label for="fmsg">Message</label><textarea id="fmsg" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+                    <button type="submit" class="btn btn-primary btn-full"><span>Send Message 🚀</span></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer><div class="container"><p>Built by <strong>Ridhvik</strong> · © 2026</p></div></footer>
+    <script src="script.js"></script>
+</body>
+</html>
