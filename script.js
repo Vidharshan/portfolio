@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════ */
 
 // ─── 1. TYPING EFFECT ────────────────────────────────
-const ROLES=["Full Stack Developer","AI Enthusiast","Problem Solver","Creative Coder"];
+const ROLES=["Search Engineer","GenAI Builder","Published Researcher","Hackathon Champion"];
 let ri=0,ci=0,del=false;const typed=document.getElementById("typedText");
 function typeLoop(){const w=ROLES[ri];typed.textContent=del?w.slice(0,--ci):w.slice(0,++ci);let d=del?35:70;
 if(!del&&ci===w.length){d=1800;del=true}else if(del&&ci===0){del=false;ri=(ri+1)%ROLES.length;d=400}setTimeout(typeLoop,d)}
@@ -54,6 +54,7 @@ const WALL_SELECTORS = [
     ".skill-card",".proj-card",".proj-img",".proj-body",
     ".c-card",".contact-form",".chip",
     ".section-hdr",".about-chips",".about-lead",
+    ".tl-content",".tl-dot",
     "footer","input","textarea","button","label",
     ".tags span",".proj-tags span",".snake-hud",
     ".hero-cta",".hero-desc",".hero-title",

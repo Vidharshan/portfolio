@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ridhvik — Full Stack Developer & AI Enthusiast. Play the snake game on the page!">
-    <title>Ridhvik — Developer Portfolio</title>
+    <meta name="description" content="Vidharshana Ravi — Search Engineer at Morgan Stanley. Enterprise Search, GenAI, RAG, and Hybrid Retrieval.">
+    <title>Vidharshana Ravi — Search Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Snake canvas — lives on top of everything -->
     <canvas id="snake-canvas"></canvas>
 
-    <!-- Floating snake HUD -->
     <div class="snake-hud" id="snakeHud">
         <span class="hud-snake-icon">🐍</span>
         <span class="hud-score" id="hudScore">0</span>
@@ -22,13 +20,14 @@
         <span class="hud-hint" id="hudHint">Arrow keys to play</span>
     </div>
 
-    <!-- Navigation -->
+    <!-- Nav -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo"><span class="lb">&lt;</span>RV<span class="lb">/&gt;</span></a>
+            <a href="#hero" class="nav-logo"><span class="lb">&lt;</span>VR<span class="lb">/&gt;</span></a>
             <div class="nav-links" id="navLinks">
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -39,32 +38,33 @@
     <!-- Hero -->
     <section id="hero">
         <div class="hero-content">
-            <div class="hero-badge"><span class="badge-dot"></span> Open to opportunities</div>
+            <div class="hero-badge"><span class="badge-dot"></span> Associate (SDE2) @ Morgan Stanley</div>
             <h1 class="hero-title">
                 <span class="hero-hi">Hi, I'm</span>
-                <span class="hero-name">Ridhvik</span>
+                <span class="hero-name">Vidharshana Ravi</span>
                 <span class="hero-role" id="typedText"></span>
             </h1>
-            <p class="hero-desc">I build <span class="hl">AI-powered</span> products and delightful <span class="hl">web experiences</span>. Currently obsessed with LLMs, agentic workflows, and turning complex problems into elegant code.</p>
+            <p class="hero-desc">Search Engineer building enterprise search systems serving <span class="hl">1.5M+ users</span> at Morgan Stanley. <span class="hl">Published researcher</span>, hackathon champion, and community speaker passionate about search relevance, GenAI, and scalable systems.</p>
             <div class="hero-cta">
-                <a href="#about" class="btn btn-primary"><span>About Me</span></a>
-                <a href="#projects" class="btn btn-ghost"><span>View Projects</span></a>
+                <a href="#projects" class="btn btn-primary"><span>View Projects</span></a>
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-93691-3_27" target="_blank" class="btn btn-ghost"><span>📄 Publication</span></a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><span class="stat-num" data-target="15">0</span><span class="stat-p">+</span><span class="stat-lbl">Projects</span></div>
-                <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-p">+</span><span class="stat-lbl">Technologies</span></div>
-                <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-p">+</span><span class="stat-lbl">Years Coding</span></div>
+                <div class="stat"><span class="stat-num" data-target="1.5">0</span><span class="stat-p">M+</span><span class="stat-lbl">Users Served</span></div>
+                <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-p">+</span><span class="stat-lbl">Hackathon Wins</span></div>
+                <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-p"></span><span class="stat-lbl">Springer Publication</span></div>
             </div>
         </div>
         <div class="hero-visual">
             <div class="code-card">
-                <div class="cc-bar"><span class="cd r"></span><span class="cd y"></span><span class="cd g"></span><span class="cc-title">about.ts</span></div>
-                <pre class="cc-code"><code><span class="kw">const</span> <span class="vr">dev</span> = {
-  <span class="ky">name</span>: <span class="st">"Ridhvik"</span>,
-  <span class="ky">stack</span>: [<span class="st">"Python"</span>, <span class="st">"React"</span>, <span class="st">"Next.js"</span>],
-  <span class="ky">focus</span>: <span class="st">"AI & Full Stack"</span>,
-  <span class="ky">coffee</span>: <span class="bl">Infinity</span>,
-  <span class="ky">motto</span>: <span class="st">"Ship fast, learn faster"</span>,
+                <div class="cc-bar"><span class="cd r"></span><span class="cd y"></span><span class="cd g"></span><span class="cc-title">vidharshan.ts</span></div>
+                <pre class="cc-code"><code><span class="kw">const</span> <span class="vr">engineer</span> = {
+  <span class="ky">name</span>: <span class="st">"Vidharshana Ravi"</span>,
+  <span class="ky">role</span>: <span class="st">"Search Engineer"</span>,
+  <span class="ky">company</span>: <span class="st">"Morgan Stanley"</span>,
+  <span class="ky">stack</span>: [<span class="st">"Solr"</span>, <span class="st">"Python"</span>, <span class="st">"GenAI"</span>],
+  <span class="ky">users</span>: <span class="st">"1.5M+"</span>,
+  <span class="ky">published</span>: <span class="bl">true</span>,
 };</code></pre>
             </div>
         </div>
@@ -76,21 +76,59 @@
             <div class="section-hdr"><span class="stag">01</span><h2 class="stitle">About Me</h2><div class="sline"></div></div>
             <div class="about-grid">
                 <div class="about-text">
-                    <p class="about-lead">I'm a <strong>full-stack developer</strong> passionate about building AI-powered products that solve real problems.</p>
-                    <p>My journey started with curiosity about how things work and evolved into a deep love for crafting software. I work across the entire stack — from pixel-perfect frontends to robust backend APIs and intelligent AI agents.</p>
-                    <p>When I'm not shipping code, I'm exploring new technologies, contributing to open source, or building side projects that push boundaries.</p>
+                    <p class="about-lead">I'm a <strong>Search Engineer</strong> at Morgan Stanley, building enterprise-scale search and GenAI systems that power knowledge discovery for 1.5M+ users globally.</p>
+                    <p>I work across the full search stack — from ingestion pipelines and schema design to hybrid retrieval, semantic ranking, and GenAI answer generation. I've contributed to Elasticsearch modernization, built Solr backup automation, and designed GenAI observability systems.</p>
+                    <p>Outside work, I'm a published Springer researcher, Smart India Hackathon winner, GDG speaker, and a core member of AI Learn Circle Bengaluru. I graduated from College of Engineering Guindy (CEG) with a 9.0 CGPA.</p>
                     <div class="about-chips">
-                        <div class="chip">🧠 AI/ML Integration</div>
-                        <div class="chip">⚡ Performance Obsessed</div>
-                        <div class="chip">🎨 Design-Driven</div>
-                        <div class="chip">🚀 Ship Fast</div>
+                        <div class="chip">🏆 SIH Winner</div>
+                        <div class="chip">📄 Springer Published</div>
+                        <div class="chip">🎤 GDG Speaker</div>
+                        <div class="chip">🌍 Google Hackathon Top 15</div>
+                        <div class="chip">🏅 MS Global Tech Award Finalist</div>
+                        <div class="chip">📍 Bangalore</div>
                     </div>
                 </div>
                 <div class="about-skills">
-                    <div class="skill-card" data-animate><h3>Frontend</h3><div class="tags"><span>React</span><span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>HTML/CSS</span></div></div>
-                    <div class="skill-card" data-animate><h3>Backend</h3><div class="tags"><span>Python</span><span>FastAPI</span><span>Node.js</span><span>PostgreSQL</span><span>Supabase</span></div></div>
-                    <div class="skill-card" data-animate><h3>AI / ML</h3><div class="tags"><span>LangChain</span><span>LangGraph</span><span>OpenAI</span><span>Gemini</span><span>RAG</span></div></div>
-                    <div class="skill-card" data-animate><h3>Tools</h3><div class="tags"><span>Git</span><span>Docker</span><span>Vercel</span><span>Linux</span><span>Flutter</span></div></div>
+                    <div class="skill-card" data-animate><h3>Search & IR</h3><div class="tags"><span>Solr</span><span>Fusion</span><span>Elasticsearch</span><span>Search Relevance</span><span>Hybrid Search</span></div></div>
+                    <div class="skill-card" data-animate><h3>AI / ML</h3><div class="tags"><span>LangChain</span><span>RAG</span><span>Agentic AI</span><span>TensorFlow</span><span>PyTorch</span><span>Gemini</span></div></div>
+                    <div class="skill-card" data-animate><h3>Languages</h3><div class="tags"><span>Python</span><span>Java</span><span>JavaScript</span><span>C++</span><span>C</span></div></div>
+                    <div class="skill-card" data-animate><h3>Cloud & Infra</h3><div class="tags"><span>AWS</span><span>Azure</span><span>Firebase</span><span>GCP</span><span>Linux</span><span>PostgreSQL</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-hdr"><span class="stag">02</span><h2 class="stitle">Experience</h2><div class="sline"></div></div>
+            <div class="timeline">
+                <div class="tl-item" data-animate>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-date">July 2024 — Present</span>
+                        <h3>Associate (SDE2), Search Engineer</h3>
+                        <p class="tl-company">Morgan Stanley · Bangalore</p>
+                        <p>Building enterprise search platform serving 1.5M+ users. Hybrid retrieval (Solr + vector), GenAI answer pipelines, observability systems, Elasticsearch modernization, and reliability automation. Promoted from Analyst (SDE1).</p>
+                    </div>
+                </div>
+                <div class="tl-item" data-animate>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-date">Feb 2023 — May 2023</span>
+                        <h3>Research Intern</h3>
+                        <p class="tl-company">CSIR</p>
+                        <p>Prosthetic limb research — grasp pattern detection using deep learning and computer vision with TensorFlow. Published in Springer CCIS.</p>
+                    </div>
+                </div>
+                <div class="tl-item" data-animate>
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-date">2020 — 2024</span>
+                        <h3>B.E. Computer Science Engineering</h3>
+                        <p class="tl-company">College of Engineering Guindy (CEG) · CGPA 9.0</p>
+                        <p>Deputy Director at ACM, Joint Secretary at CSEA, Junior Head at AUSEC. Multiple national hackathon wins.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,33 +137,42 @@
     <!-- Projects -->
     <section id="projects" class="section">
         <div class="container">
-            <div class="section-hdr"><span class="stag">02</span><h2 class="stitle">Projects</h2><div class="sline"></div></div>
+            <div class="section-hdr"><span class="stag">03</span><h2 class="stitle">Projects</h2><div class="sline"></div></div>
             <div class="projects-grid">
                 <article class="proj-card featured" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#667eea,#764ba2)"><span class="proj-emoji">🤖</span></div>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#667eea,#764ba2)"><span class="proj-emoji">🗣️</span></div>
                     <div class="proj-body">
-                        <div class="proj-tags"><span>Next.js</span><span>LangGraph</span><span>Python</span></div>
-                        <h3>Scout Pilot</h3>
-                        <p>AI-powered job application workflow — automates scouting, resume tailoring, and referral outreach using LangGraph agents.</p>
-                        <div class="proj-links"><a href="#">GitHub ↗</a><a href="#">Live ↗</a></div>
+                        <div class="proj-tags"><span>SIH Winner</span><span>Eye Tracking</span><span>Accessibility</span></div>
+                        <h3>SwatantraVox AAC</h3>
+                        <p>Assistive communication system for people with disabilities. Eye tracking, context recognition, and multi-modal communication. Winner at Smart India Hackathon.</p>
+                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
                     </div>
                 </article>
                 <article class="proj-card" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><span class="proj-emoji">🌾</span></div>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><span class="proj-emoji">🏙️</span></div>
                     <div class="proj-body">
-                        <div class="proj-tags"><span>Flutter</span><span>Dart</span><span>Supabase</span></div>
+                        <div class="proj-tags"><span>Google Top 15</span><span>Gemini</span><span>Vertex AI</span></div>
+                        <h3>Urban Intelligence Dashboard</h3>
+                        <p>Multi-agent city intelligence platform with real-time civic monitoring, traffic analysis, and predictive notifications. Top 15 at Google Agentic AI Hackathon.</p>
+                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
+                    </div>
+                </article>
+                <article class="proj-card" data-animate>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><span class="proj-emoji">🌾</span></div>
+                    <div class="proj-body">
+                        <div class="proj-tags"><span>E-Commerce</span><span>Full Stack</span><span>100+ Customers</span></div>
                         <h3>Annam Natural Farms</h3>
-                        <p>Farm management app with order tracking, customer profiles, and data exports.</p>
-                        <div class="proj-links"><a href="#">GitHub ↗</a><a href="#">Live ↗</a></div>
+                        <p>Full-stack e-commerce platform serving 100+ customers and 1200+ monthly orders. Built end-to-end with deployment and go-to-market strategy.</p>
+                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
                     </div>
                 </article>
                 <article class="proj-card" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><span class="proj-emoji">🎮</span></div>
+                    <div class="proj-img" style="background:linear-gradient(135deg,#fa709a,#fee140)"><span class="proj-emoji">🚨</span></div>
                     <div class="proj-body">
-                        <div class="proj-tags"><span>React</span><span>Gamification</span></div>
-                        <h3>LifeQuest</h3>
-                        <p>Gamified personal development — turns daily habits into an RPG progression system.</p>
-                        <div class="proj-links"><a href="#">GitHub ↗</a><a href="#">Live ↗</a></div>
+                        <div class="proj-tags"><span>Khacks Winner</span><span>Emergency</span><span>Evacuation</span></div>
+                        <h3>Smart Disaster Evacuation</h3>
+                        <p>Emergency response and evacuation optimization system for disaster scenarios. Winner at Kurukshetra Khacks hackathon.</p>
+                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
                     </div>
                 </article>
             </div>
@@ -135,15 +182,17 @@
     <!-- Contact -->
     <section id="contact" class="section">
         <div class="container">
-            <div class="section-hdr"><span class="stag">03</span><h2 class="stitle">Contact</h2><div class="sline"></div></div>
+            <div class="section-hdr"><span class="stag">04</span><h2 class="stitle">Contact</h2><div class="sline"></div></div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Let's build something together.</h3>
-                    <p>I'm always open to new opportunities, collaborations, and conversations.</p>
+                    <h3>Let's connect.</h3>
+                    <p>Open to collaborations, speaking opportunities, and interesting conversations about search, AI, and engineering.</p>
                     <div class="contact-cards">
-                        <a href="mailto:your.email@example.com" class="c-card"><span class="c-icon">📧</span><div><span class="c-label">Email</span><span class="c-val">your.email@example.com</span></div></a>
-                        <a href="https://github.com/yourusername" target="_blank" class="c-card"><span class="c-icon">💻</span><div><span class="c-label">GitHub</span><span class="c-val">@yourusername</span></div></a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="c-card"><span class="c-icon">🔗</span><div><span class="c-label">LinkedIn</span><span class="c-val">/in/yourprofile</span></div></a>
+                        <a href="mailto:vidharsh2003@gmail.com" class="c-card"><span class="c-icon">📧</span><div><span class="c-label">Email</span><span class="c-val">vidharsh2003@gmail.com</span></div></a>
+                        <a href="tel:+917358095606" class="c-card"><span class="c-icon">📱</span><div><span class="c-label">Phone</span><span class="c-val">+91 7358095606</span></div></a>
+                        <a href="https://github.com/Vidharshan/" target="_blank" class="c-card"><span class="c-icon">💻</span><div><span class="c-label">GitHub</span><span class="c-val">@Vidharshan</span></div></a>
+                        <a href="https://www.linkedin.com/in/vidharshana-ravi-104934211/" target="_blank" class="c-card"><span class="c-icon">🔗</span><div><span class="c-label">LinkedIn</span><span class="c-val">Vidharshana Ravi</span></div></a>
+                        <a href="https://vidharshan.github.io/portfolio/" target="_blank" class="c-card"><span class="c-icon">🌐</span><div><span class="c-label">Website</span><span class="c-val">vidharshan.github.io</span></div></a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
@@ -156,7 +205,7 @@
         </div>
     </section>
 
-    <footer><div class="container"><p>Built by <strong>Ridhvik</strong> · © 2026</p></div></footer>
+    <footer><div class="container"><p>Built by <strong>Vidharshana Ravi</strong> · © 2026</p></div></footer>
     <script src="script.js"></script>
 </body>
 </html>
