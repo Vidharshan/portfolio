@@ -1,211 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vidharshana Ravi — Search Engineer at Morgan Stanley. Enterprise Search, GenAI, RAG, and Hybrid Retrieval.">
-    <title>Vidharshana Ravi — Search Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidharshana Ravi — Search / AI Engineer</title>
+<meta name="description" content="Vidharshana Ravi — Search Engineer at Morgan Stanley. Enterprise search, hybrid retrieval, GenAI, and RAG systems serving 1.5M+ users.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="snake-canvas"></canvas>
 
-    <div class="snake-hud" id="snakeHud">
-        <span class="hud-snake-icon">🐍</span>
-        <span class="hud-score" id="hudScore">0</span>
-        <span class="hud-sep">|</span>
-        <span class="hud-hint" id="hudHint">Arrow keys to play</span>
-    </div>
+<div class="grain"></div>
 
-    <!-- Nav -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo"><span class="lb">&lt;</span>VR<span class="lb">/&gt;</span></a>
-            <div class="nav-links" id="navLinks">
-                <a href="#hero" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
-        </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="logo">VR<span class="logo-dot">·</span><span class="logo-sub">search</span></a>
+
+    <nav class="topnav">
+      <a href="#index" data-nav="index">index</a>
+      <a href="#experience" data-nav="experience">experience</a>
+      <a href="#projects" data-nav="projects">projects</a>
+      <a href="#proof" data-nav="proof">proof</a>
+      <a href="#contact" data-nav="contact">contact</a>
     </nav>
 
-    <!-- Hero -->
-    <section id="hero">
-        <div class="hero-content">
-            <div class="hero-badge"><span class="badge-dot"></span> Associate (SDE2) @ Morgan Stanley</div>
-            <h1 class="hero-title">
-                <span class="hero-hi">Hi, I'm</span>
-                <span class="hero-name">Vidharshana Ravi</span>
-                <span class="hero-role" id="typedText"></span>
-            </h1>
-            <p class="hero-desc">Search Engineer building enterprise search systems serving <span class="hl">1.5M+ users</span> at Morgan Stanley. <span class="hl">Published researcher</span>, hackathon champion, and community speaker passionate about search relevance, GenAI, and scalable systems.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary"><span>View Projects</span></a>
-                <a href="https://link.springer.com/chapter/10.1007/978-3-031-93691-3_27" target="_blank" class="btn btn-ghost"><span>📄 Publication</span></a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><span class="stat-num" data-target="1.5">0</span><span class="stat-p">M+</span><span class="stat-lbl">Users Served</span></div>
-                <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-p">+</span><span class="stat-lbl">Hackathon Wins</span></div>
-                <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-p"></span><span class="stat-lbl">Springer Publication</span></div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="code-card">
-                <div class="cc-bar"><span class="cd r"></span><span class="cd y"></span><span class="cd g"></span><span class="cc-title">vidharshan.ts</span></div>
-                <pre class="cc-code"><code><span class="kw">const</span> <span class="vr">engineer</span> = {
-  <span class="ky">name</span>: <span class="st">"Vidharshana Ravi"</span>,
-  <span class="ky">role</span>: <span class="st">"Search Engineer"</span>,
-  <span class="ky">company</span>: <span class="st">"Morgan Stanley"</span>,
-  <span class="ky">stack</span>: [<span class="st">"Solr"</span>, <span class="st">"Python"</span>, <span class="st">"GenAI"</span>],
-  <span class="ky">users</span>: <span class="st">"1.5M+"</span>,
-  <span class="ky">published</span>: <span class="bl">true</span>,
-};</code></pre>
-            </div>
-        </div>
-    </section>
+    <button class="snake-toggle" id="snakeToggle" aria-label="Play snake" title="psst — try arrow keys">
+      <span class="snake-dot"></span> snake_v1.run()
+    </button>
+  </div>
+</header>
 
-    <!-- About -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-hdr"><span class="stag">01</span><h2 class="stitle">About Me</h2><div class="sline"></div></div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="about-lead">I'm a <strong>Search Engineer</strong> at Morgan Stanley, building enterprise-scale search and GenAI systems that power knowledge discovery for 1.5M+ users globally.</p>
-                    <p>I work across the full search stack — from ingestion pipelines and schema design to hybrid retrieval, semantic ranking, and GenAI answer generation. I've contributed to Elasticsearch modernization, built Solr backup automation, and designed GenAI observability systems.</p>
-                    <p>Outside work, I'm a published Springer researcher, Smart India Hackathon winner, GDG speaker, and a core member of AI Learn Circle Bengaluru. I graduated from College of Engineering Guindy (CEG) with a 9.0 CGPA.</p>
-                    <div class="about-chips">
-                        <div class="chip">🏆 SIH Winner</div>
-                        <div class="chip">📄 Springer Published</div>
-                        <div class="chip">🎤 GDG Speaker</div>
-                        <div class="chip">🌍 Google Hackathon Top 15</div>
-                        <div class="chip">🏅 MS Global Tech Award Finalist</div>
-                        <div class="chip">📍 Bangalore</div>
-                    </div>
-                </div>
-                <div class="about-skills">
-                    <div class="skill-card" data-animate><h3>Search & IR</h3><div class="tags"><span>Solr</span><span>Fusion</span><span>Elasticsearch</span><span>Search Relevance</span><span>Hybrid Search</span></div></div>
-                    <div class="skill-card" data-animate><h3>AI / ML</h3><div class="tags"><span>LangChain</span><span>RAG</span><span>Agentic AI</span><span>TensorFlow</span><span>PyTorch</span><span>Gemini</span></div></div>
-                    <div class="skill-card" data-animate><h3>Languages</h3><div class="tags"><span>Python</span><span>Java</span><span>JavaScript</span><span>C++</span><span>C</span></div></div>
-                    <div class="skill-card" data-animate><h3>Cloud & Infra</h3><div class="tags"><span>AWS</span><span>Azure</span><span>Firebase</span><span>GCP</span><span>Linux</span><span>PostgreSQL</span></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- SNAKE GAME PANEL -->
+<div class="snake-panel" id="snakePanel" aria-hidden="true">
+  <div class="snake-panel-inner">
+    <div class="snake-meta">
+      <span>SNAKE.EXE</span>
+      <span id="snakeScore">score: 0</span>
+      <button id="snakeClose" aria-label="Close">×</button>
+    </div>
+    <canvas id="snakeCanvas" width="320" height="320"></canvas>
+    <div class="snake-hint">arrow keys to move · space to pause</div>
+  </div>
+</div>
 
-    <!-- Experience -->
-    <section id="experience" class="section">
-        <div class="container">
-            <div class="section-hdr"><span class="stag">02</span><h2 class="stitle">Experience</h2><div class="sline"></div></div>
-            <div class="timeline">
-                <div class="tl-item" data-animate>
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <span class="tl-date">July 2024 — Present</span>
-                        <h3>Associate (SDE2), Search Engineer</h3>
-                        <p class="tl-company">Morgan Stanley · Bangalore</p>
-                        <p>Building enterprise search platform serving 1.5M+ users. Hybrid retrieval (Solr + vector), GenAI answer pipelines, observability systems, Elasticsearch modernization, and reliability automation. Promoted from Analyst (SDE1).</p>
-                    </div>
-                </div>
-                <div class="tl-item" data-animate>
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <span class="tl-date">Feb 2023 — May 2023</span>
-                        <h3>Research Intern</h3>
-                        <p class="tl-company">CSIR</p>
-                        <p>Prosthetic limb research — grasp pattern detection using deep learning and computer vision with TensorFlow. Published in Springer CCIS.</p>
-                    </div>
-                </div>
-                <div class="tl-item" data-animate>
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <span class="tl-date">2020 — 2024</span>
-                        <h3>B.E. Computer Science Engineering</h3>
-                        <p class="tl-company">College of Engineering Guindy (CEG) · CGPA 9.0</p>
-                        <p>Deputy Director at ACM, Joint Secretary at CSEA, Junior Head at AUSEC. Multiple national hackathon wins.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main id="top">
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-hdr"><span class="stag">03</span><h2 class="stitle">Projects</h2><div class="sline"></div></div>
-            <div class="projects-grid">
-                <article class="proj-card featured" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#667eea,#764ba2)"><span class="proj-emoji">🗣️</span></div>
-                    <div class="proj-body">
-                        <div class="proj-tags"><span>SIH Winner</span><span>Eye Tracking</span><span>Accessibility</span></div>
-                        <h3>SwatantraVox AAC</h3>
-                        <p>Assistive communication system for people with disabilities. Eye tracking, context recognition, and multi-modal communication. Winner at Smart India Hackathon.</p>
-                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
-                    </div>
-                </article>
-                <article class="proj-card" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><span class="proj-emoji">🏙️</span></div>
-                    <div class="proj-body">
-                        <div class="proj-tags"><span>Google Top 15</span><span>Gemini</span><span>Vertex AI</span></div>
-                        <h3>Urban Intelligence Dashboard</h3>
-                        <p>Multi-agent city intelligence platform with real-time civic monitoring, traffic analysis, and predictive notifications. Top 15 at Google Agentic AI Hackathon.</p>
-                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
-                    </div>
-                </article>
-                <article class="proj-card" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"><span class="proj-emoji">🌾</span></div>
-                    <div class="proj-body">
-                        <div class="proj-tags"><span>E-Commerce</span><span>Full Stack</span><span>100+ Customers</span></div>
-                        <h3>Annam Natural Farms</h3>
-                        <p>Full-stack e-commerce platform serving 100+ customers and 1200+ monthly orders. Built end-to-end with deployment and go-to-market strategy.</p>
-                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
-                    </div>
-                </article>
-                <article class="proj-card" data-animate>
-                    <div class="proj-img" style="background:linear-gradient(135deg,#fa709a,#fee140)"><span class="proj-emoji">🚨</span></div>
-                    <div class="proj-body">
-                        <div class="proj-tags"><span>Khacks Winner</span><span>Emergency</span><span>Evacuation</span></div>
-                        <h3>Smart Disaster Evacuation</h3>
-                        <p>Emergency response and evacuation optimization system for disaster scenarios. Winner at Kurukshetra Khacks hackathon.</p>
-                        <div class="proj-links"><a href="https://github.com/Vidharshan/" target="_blank">GitHub ↗</a></div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-hdr"><span class="stag">04</span><h2 class="stitle">Contact</h2><div class="sline"></div></div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Let's connect.</h3>
-                    <p>Open to collaborations, speaking opportunities, and interesting conversations about search, AI, and engineering.</p>
-                    <div class="contact-cards">
-                        <a href="mailto:vidharsh2003@gmail.com" class="c-card"><span class="c-icon">📧</span><div><span class="c-label">Email</span><span class="c-val">vidharsh2003@gmail.com</span></div></a>
-                        <a href="tel:+917358095606" class="c-card"><span class="c-icon">📱</span><div><span class="c-label">Phone</span><span class="c-val">+91 7358095606</span></div></a>
-                        <a href="https://github.com/Vidharshan/" target="_blank" class="c-card"><span class="c-icon">💻</span><div><span class="c-label">GitHub</span><span class="c-val">@Vidharshan</span></div></a>
-                        <a href="https://www.linkedin.com/in/vidharshana-ravi-104934211/" target="_blank" class="c-card"><span class="c-icon">🔗</span><div><span class="c-label">LinkedIn</span><span class="c-val">Vidharshana Ravi</span></div></a>
-                        <a href="https://vidharshan.github.io/portfolio/" target="_blank" class="c-card"><span class="c-icon">🌐</span><div><span class="c-label">Website</span><span class="c-val">vidharshan.github.io</span></div></a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="fg"><label for="fname">Name</label><input type="text" id="fname" placeholder="John Doe" required></div>
-                    <div class="fg"><label for="femail">Email</label><input type="email" id="femail" placeholder="john@example.com" required></div>
-                    <div class="fg"><label for="fmsg">Message</label><textarea id="fmsg" rows="5" placeholder="Tell me about your project..." required></textarea></div>
-                    <button type="submit" class="btn btn-primary btn-full"><span>Send Message 🚀</span></button>
-                </form>
-            </div>
-        </div>
-    </section>
+      <div class="hero-eyebrow">
+        <span class="dot-live"></span> Associate (SDE2) · Search Engineer @ Morgan Stanley · Bengaluru
+      </div>
 
-    <footer><div class="container"><p>Built by <strong>Vidharshana Ravi</strong> · © 2026</p></div></footer>
-    <script src="script.js"></script>
+      <h1 class="hero-title">
+        I build the layer<br>
+        between a question<br>
+        <span class="hero-accent">and an answer.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Vidharshana Ravi — hybrid search &amp; GenAI systems for 1.5M+ users at Morgan Stanley.
+        Published researcher. National hackathon winner. Founder on the side.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">See the work ↓</a>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-93691-3_27" target="_blank" rel="noopener" class="btn btn-ghost">Read the paper ↗</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="1.5" data-suffix="M+">0</span>
+          <span class="stat-label">users served</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="9" data-suffix="">0</span>
+          <span class="stat-label">hackathon wins</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="1" data-suffix="">0</span>
+          <span class="stat-label">Springer publication</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="700" data-suffix="+">0</span>
+          <span class="stat-label">orders/mo, self-built platform</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 01 INDEX / ABOUT ============ -->
+  <section class="section" id="index">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-tag">/about</span>
+        <h2 class="section-title">What I actually do</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            I'm a Search Engineer at Morgan Stanley, working across the full retrieval stack — ingestion
+            pipelines, schema design, hybrid ranking, and the GenAI layer that turns search results into
+            answers. The platform I help build serves <strong>1.5M+ users</strong> globally, so most of my
+            day is some mix of relevance tuning, reliability work, and figuring out why a query that should
+            return one document returned zero.
+          </p>
+          <p>
+            Outside that, I build things on my own clock. I've shipped a full e-commerce platform from
+            scratch, won national hackathons building accessibility and civic-tech tools, published
+            peer-reviewed research on prosthetic-limb computer vision, and spoken to rooms of 100+ developers
+            about generative models. I graduated from <strong>College of Engineering Guindy</strong> with a
+            9.0 CGPA.
+          </p>
+        </div>
+
+        <div class="about-facts">
+          <div class="fact-row"><span>Based in</span><strong>Bengaluru, India</strong></div>
+          <div class="fact-row"><span>Role</span><strong>Search / AI Engineer</strong></div>
+          <div class="fact-row"><span>Company</span><strong>Morgan Stanley</strong></div>
+          <div class="fact-row"><span>Education</span><strong>B.E. CSE, CEG · 9.0 CGPA</strong></div>
+          <div class="fact-row"><span>Published</span><strong>Springer CCIS</strong></div>
+          <div class="fact-row"><span>Status</span><strong class="fact-open">open to interesting conversations</strong></div>
+        </div>
+      </div>
+
+      <div class="skill-strip">
+        <div class="skill-group">
+          <h4>search &amp; ir</h4>
+          <div class="skill-tags">
+            <span>Solr</span><span>Fusion</span><span>Elasticsearch</span><span>Hybrid Search</span><span>Search Relevance</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>ai / ml</h4>
+          <div class="skill-tags">
+            <span>RAG</span><span>LangChain</span><span>Agentic AI</span><span>TensorFlow</span><span>PyTorch</span><span>Gemini</span><span>Claude / MCP</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>languages</h4>
+          <div class="skill-tags">
+            <span>Python</span><span>Java</span><span>JavaScript</span><span>C++</span><span>C</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>cloud &amp; infra</h4>
+          <div class="skill-tags">
+            <span>AWS</span><span>Azure</span><span>GCP</span><span>Firebase</span><span>Linux</span><span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 EXPERIENCE ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-tag">/experience</span>
+        <h2 class="section-title">Where the work happened</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-row">
+          <div class="tl-when">
+            <span class="tl-date">Jul 2024 — Present</span>
+            <span class="tl-loc">Bengaluru</span>
+          </div>
+          <div class="tl-content">
+            <h3>Associate (SDE2), Search Engineer <span class="tl-co">— Morgan Stanley</span></h3>
+            <p>
+              Build hybrid retrieval — Solr/Fusion keyword search merged with vector database retrieval —
+              and the GenAI answer-generation pipeline sitting on top of it, for an enterprise platform
+              used by 1.5M+ people. Designed observability for response, summary, and interaction signals
+              so the team can actually measure answer quality instead of guessing. Led an Elasticsearch
+              modernization PoC and automated Solr backup validation, cutting manual verification effort.
+              Promoted from Analyst (SDE1).
+            </p>
+            <div class="tl-tags">
+              <span>Hybrid Search</span><span>RAG</span><span>GenAI Observability</span><span>Elasticsearch</span><span>Reliability</span>
+            </div>
+            <div class="tl-badges">
+              <span class="badge badge-amber">🏅 Global Nominee — MS Technology Excellence Award</span>
+              <span class="badge">🏆 Winner — Microsoft Copilot Agentic Promptathon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-when">
+            <span class="tl-date">Feb — May 2023</span>
+            <span class="tl-loc">CSIR</span>
+          </div>
+          <div class="tl-content">
+            <h3>Research Intern <span class="tl-co">— CSIR</span></h3>
+            <p>
+              Researched grasp-pattern detection for prosthetic limbs using deep learning and computer
+              vision (TensorFlow, Python) — accessibility-focused work that was later published in a
+              peer-reviewed Springer CCIS volume.
+            </p>
+            <div class="tl-tags">
+              <span>Computer Vision</span><span>TensorFlow</span><span>Accessibility</span>
+            </div>
+            <div class="tl-badges">
+              <span class="badge badge-teal">📄 Published — Springer CCIS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-when">
+            <span class="tl-date">2020 — 2024</span>
+            <span class="tl-loc">Chennai</span>
+          </div>
+          <div class="tl-content">
+            <h3>B.E. Computer Science Engineering <span class="tl-co">— College of Engineering Guindy</span></h3>
+            <p>
+              CGPA 9.0. Deputy Director &amp; Head of Content/Design at ACM, Joint Secretary at CSEA,
+              Junior Head at AUSEC — running workshops, stock-market and crypto sessions, and technical
+              content for student communities. Multiple national hackathon wins during this period.
+            </p>
+            <div class="tl-tags">
+              <span>ACM</span><span>CSEA</span><span>AUSEC</span><span>Leadership</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-tag">/projects</span>
+        <h2 class="section-title">Things I've shipped</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="proj-card proj-feature">
+          <div class="proj-top">
+            <span class="proj-icon">🗣️</span>
+            <div class="proj-result">
+              <span class="proj-rank">#1</span>
+              <span class="proj-event">Smart India Hackathon</span>
+            </div>
+          </div>
+          <h3>SwatantraVox AAC</h3>
+          <p>
+            An assistive communication system for people with disabilities — eye tracking, context
+            recognition, and multi-modal input working together so users can communicate without
+            relying on speech or fine motor control. Built and iterated across a 6-member team through
+            multiple evaluation rounds before taking 1st place nationally.
+          </p>
+          <div class="tl-tags">
+            <span>Eye Tracking</span><span>Accessibility</span><span>Multi-modal</span>
+          </div>
+          <a class="proj-link" href="https://github.com/Vidharshan/" target="_blank" rel="noopener">view source ↗</a>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <span class="proj-icon">🏙️</span>
+            <div class="proj-result">
+              <span class="proj-rank">Top 15</span>
+              <span class="proj-event">Google Agentic AI Hackathon · India</span>
+            </div>
+          </div>
+          <h3>Agentic Urban Intelligence Dashboard</h3>
+          <p>
+            A multi-agent system for real-time city intelligence — civic issue monitoring, traffic
+            analysis, geo-tagged incident reporting, and predictive alerts, built on Gemini, Vertex AI,
+            and Firebase.
+          </p>
+          <div class="tl-tags">
+            <span>Gemini</span><span>Vertex AI</span><span>Multi-agent</span>
+          </div>
+          <a class="proj-link" href="https://github.com/Vidharshan/" target="_blank" rel="noopener">view source ↗</a>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <span class="proj-icon">🌾</span>
+            <div class="proj-result">
+              <span class="proj-rank">700+</span>
+              <span class="proj-event">orders / month</span>
+            </div>
+          </div>
+          <h3>Annam Natural Farms</h3>
+          <p>
+            A full-stack e-commerce platform I built and scaled from zero — product, deployment,
+            customer acquisition, and go-to-market, end to end. Now serving 100+ customers and 700+
+            orders a month.
+          </p>
+          <div class="tl-tags">
+            <span>Full Stack</span><span>0→1</span><span>Founder</span>
+          </div>
+          <a class="proj-link" href="https://github.com/Vidharshan/" target="_blank" rel="noopener">view source ↗</a>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <span class="proj-icon">🚨</span>
+            <div class="proj-result">
+              <span class="proj-rank">#1</span>
+              <span class="proj-event">Kurukshetra · Khacks</span>
+            </div>
+          </div>
+          <h3>Smart Disaster Evacuation System</h3>
+          <p>
+            An emergency-response and evacuation-optimization system built for war-time and disaster
+            scenarios — routing people away from danger zones as conditions change in real time.
+          </p>
+          <div class="tl-tags">
+            <span>Emergency Response</span><span>Optimization</span>
+          </div>
+          <a class="proj-link" href="https://github.com/Vidharshan/" target="_blank" rel="noopener">view source ↗</a>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-top">
+            <span class="proj-icon">🔐</span>
+            <div class="proj-result">
+              <span class="proj-rank">internal</span>
+              <span class="proj-event">Morgan Stanley</span>
+            </div>
+          </div>
+          <h3>Self-Service User Provisioning Platform</h3>
+          <p>
+            An AWS-based self-service platform for Linux Kerberos, NFS, and Active Directory
+            provisioning, plus storage and quota monitoring — replacing a manual identity/access
+            workflow with automation.
+          </p>
+          <div class="tl-tags">
+            <span>AWS</span><span>Automation</span><span>IAM</span>
+          </div>
+        </article>
+
+        <article class="proj-card proj-more">
+          <h3>+ 6 more hackathon wins</h3>
+          <p>
+            Devfolio Women Hackathon (Top 3 of 500+ teams), IdeaCrunch, Innovision, HackIT/Innovathon
+            (all 1st place), and CodeMan (3rd place).
+          </p>
+          <a class="proj-link" href="#proof">see full list ↓</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 PROOF (speaking + recognition) ============ -->
+  <section class="section section-alt" id="proof">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-tag">/proof</span>
+        <h2 class="section-title">Speaking, research &amp; recognition</h2>
+      </div>
+
+      <div class="proof-grid">
+
+        <div class="proof-block">
+          <h4>🎤 Speaking</h4>
+          <div class="proof-item">
+            <strong>Generative Adversarial Networks (GANs)</strong>
+            <span>GDG Chennai · 130+ students &amp; developers</span>
+          </div>
+          <div class="proof-item proof-muted">
+            <strong>Core Member</strong>
+            <span>AI Learn Circle, Bengaluru</span>
+          </div>
+        </div>
+
+        <div class="proof-block">
+          <h4>📄 Research</h4>
+          <div class="proof-item">
+            <strong>Grasp-pattern detection for prosthetic limbs</strong>
+            <span>Springer Communications in Computer and Information Science (CCIS)</span>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-93691-3_27" target="_blank" rel="noopener">read the paper ↗</a>
+          </div>
+        </div>
+
+        <div class="proof-block">
+          <h4>🏆 Hackathons</h4>
+          <ul class="proof-list">
+            <li><span>Smart India Hackathon</span><strong>1st</strong></li>
+            <li><span>Google Agentic AI Hackathon (India)</span><strong>Top 15</strong></li>
+            <li><span>Kurukshetra / Khacks</span><strong>1st</strong></li>
+            <li><span>Devfolio Women Hackathon</span><strong>Top 3 / 500+</strong></li>
+            <li><span>IdeaCrunch</span><strong>1st</strong></li>
+            <li><span>Innovision</span><strong>1st</strong></li>
+            <li><span>HackIT / Innovathon</span><strong>1st</strong></li>
+            <li><span>CodeMan</span><strong>3rd</strong></li>
+          </ul>
+        </div>
+
+        <div class="proof-block">
+          <h4>🏅 Awards &amp; Certifications</h4>
+          <div class="proof-item proof-muted">
+            <strong>Global Nominee, Technology Excellence Award</strong>
+            <span>Morgan Stanley (team)</span>
+          </div>
+          <div class="proof-item proof-muted">
+            <strong>Winner, Copilot Agentic Promptathon</strong>
+            <span>Morgan Stanley internal</span>
+          </div>
+          <div class="proof-item proof-muted">
+            <strong>Anthropic Certifications</strong>
+            <span>AI Fluency · Builder · Enterprise (2026)</span>
+          </div>
+          <div class="proof-item proof-muted">
+            <strong>McKinsey Forward Program</strong>
+            <span>Selective global upskilling</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 CONTACT ============ -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <span class="section-tag">/contact</span>
+          <h2 class="contact-title">Let's talk search,<br>AI, or anything you're building.</h2>
+          <p class="contact-sub">
+            Open to interesting roles, speaking invites, and collaborations.
+            Fastest way to reach me is email.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:vidharsh2003@gmail.com" class="contact-link">
+              <span class="cl-label">email</span>
+              <span class="cl-value">vidharsh2003@gmail.com</span>
+            </a>
+            <a href="tel:+917358095606" class="contact-link">
+              <span class="cl-label">phone</span>
+              <span class="cl-value">+91 73580 95606</span>
+            </a>
+            <a href="https://www.linkedin.com/in/vidharshana-ravi-104934211/" target="_blank" rel="noopener" class="contact-link">
+              <span class="cl-label">linkedin</span>
+              <span class="cl-value">vidharshana-ravi ↗</span>
+            </a>
+            <a href="https://github.com/Vidharshan/" target="_blank" rel="noopener" class="contact-link">
+              <span class="cl-label">github</span>
+              <span class="cl-value">@Vidharshan ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>
+            <span>name</span>
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            <span>email</span>
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            <span>message</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit">send message →</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+
+      <footer class="site-footer">
+        <span>© 2026 Vidharshana Ravi</span>
+        <span class="footer-dim">built with intent, not a template</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
